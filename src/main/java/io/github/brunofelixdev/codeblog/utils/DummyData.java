@@ -2,7 +2,6 @@ package io.github.brunofelixdev.codeblog.utils;
 
 import io.github.brunofelixdev.codeblog.model.Post;
 import io.github.brunofelixdev.codeblog.repository.BlogRepository;
-import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,7 @@ public class DummyData {
     @Autowired
     BlogRepository blogRepository;
 
-    @PostConstruct
+//    @PostConstruct
     public void salvarPosts() {
 
         List<Post> postList = new ArrayList<>();
