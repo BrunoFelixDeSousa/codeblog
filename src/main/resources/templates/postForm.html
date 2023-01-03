@@ -6,6 +6,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
 </head>
 <body>
 
@@ -25,28 +32,38 @@
             </ol>
         </nav>
 
-        <form method="post" class="form-group">
-            <div>
-                <input type="text" class="form-control" name="titulo" placeholder="Título *">
-            </div>
-            <br>
-            <div>
-                <input type="text" class="form-control" name="autor" placeholder="Autor *">
-            </div>
-            <br>
-            <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
-            <br>
-            <small class="form-text text-muted">(*) Campos obrigatórios</small>
-            <br>
-            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-            <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-            <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
-        </form>
+        <div>
+            <th:block th:include="mensagemValidacao"></th:block>
+            <form method="post" class="form-group">
+                <div>
+                    <input type="text" class="form-control" name="titulo" placeholder="Título *">
+                </div>
+                <br>
+                <div>
+                    <input type="text" class="form-control" name="autor" placeholder="Autor *">
+                </div>
+                <br>
+                <textarea id="summernote" type="text" class="form-control" name="texto" placeholder="Texto *"></textarea>
+                <br>
+                <small class="form-text text-muted">(*) Campos obrigatórios</small>
+                <br>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+                <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                <!--<button type="submit" class="btn" style="margin-top: 10px;">Cancelar</button>-->
+            </form>
+        </div>
     </div>
 
 
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<<script>
+    $('#summernote').summernote({
+        placeholder: 'Texto *',
+        tabsize: 2,
+        height: 300
+    });
+</script>
+
 </body>
 </html>
